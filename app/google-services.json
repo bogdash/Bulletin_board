@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "206894030581",
+    "project_id": "bulletin-board-41a23",
+    "storage_bucket": "bulletin-board-41a23.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206894030581:android:f9f9a346b094c45cf32fbc",
+        "android_client_info": {
+          "package_name": "com.bogdash.bulletinboard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDpX8oVFVgqcQo9B9BG8bi13Ixn6lIOZFQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
