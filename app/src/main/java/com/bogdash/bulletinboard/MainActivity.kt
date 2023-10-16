@@ -8,11 +8,14 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import com.bogdash.bulletinboard.databinding.ActivityMainBinding
+import com.bogdash.bulletinboard.dialoghelper.DialogConst
+import com.bogdash.bulletinboard.dialoghelper.DialogHelper
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
 
 private lateinit var binding: ActivityMainBinding
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    private val dialogHelper = DialogHelper(this)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -45,12 +48,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 Toast.makeText(this, "Pressed household_appliances", Toast.LENGTH_LONG).show()
             }
             R.id.sign_in -> {
-                Toast.makeText(this, "Pressed sign in", Toast.LENGTH_LONG).show()
-
+                dialogHelper.createSignDialog(DialogConst.SIGN_IN_STATE)
             }
             R.id.sign_up -> {
-                Toast.makeText(this, "Pressed sign up", Toast.LENGTH_LONG).show()
-
+                dialogHelper.createSignDialog(DialogConst.SIGN_UP_STATE)
             }
             R.id.sign_out -> {
                 Toast.makeText(this, "Pressed sign out", Toast.LENGTH_LONG).show()
