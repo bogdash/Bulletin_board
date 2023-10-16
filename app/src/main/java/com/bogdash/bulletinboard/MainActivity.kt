@@ -12,10 +12,12 @@ import com.bogdash.bulletinboard.dialoghelper.DialogConst
 import com.bogdash.bulletinboard.dialoghelper.DialogHelper
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
+import com.google.firebase.auth.FirebaseAuth
 
 private lateinit var binding: ActivityMainBinding
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val dialogHelper = DialogHelper(this)
+    val myAuthentication = FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)

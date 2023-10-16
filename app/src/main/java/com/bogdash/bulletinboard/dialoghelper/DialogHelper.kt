@@ -3,10 +3,12 @@ package com.bogdash.bulletinboard.dialoghelper
 import android.app.AlertDialog
 import com.bogdash.bulletinboard.MainActivity
 import com.bogdash.bulletinboard.R
+import com.bogdash.bulletinboard.accounthelper.AccountHelper
 import com.bogdash.bulletinboard.databinding.SignDailogBinding
 
 class DialogHelper(act: MainActivity) {
     private val act = act
+    private val accHelper = AccountHelper(act)
     fun createSignDialog(index: Int) {
         val builder = AlertDialog.Builder(act)
         val rootDialogElement = SignDailogBinding.inflate(act.layoutInflater)
@@ -18,6 +20,17 @@ class DialogHelper(act: MainActivity) {
         } else {
             rootDialogElement.tvSignTitle.text = act.resources.getString(R.string.sign_in)
             rootDialogElement.btSignUpIn.text = act.resources.getString(R.string.sign_in_action)
+        }
+
+        rootDialogElement.btSignUpIn.setOnClickListener {
+            if (index == DialogConst.SIGN_UP_STATE) {
+                accHelper.signUpWithEmail(
+                    rootDialogElement.edSignEmail.text.toString(),
+                    rootDialogElement.edSignPassword.text.toString()
+                )
+            } else {
+
+            }
         }
 
         builder.setView(view)
