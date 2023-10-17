@@ -17,6 +17,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tvDialogMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:shadowColor="@color/black"
+        android:text="@string/dialog_reset_email_message"
+        android:textColor="@color/design_default_color_error"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/edSignEmail"
+        app:layout_constraintStart_toStartOf="@+id/edSignEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvSignTitle" />
+
     <EditText
         android:id="@+id/edSignEmail"
         android:layout_width="0dp"
@@ -29,7 +43,7 @@
         android:inputType="text|textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSignTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDialogMessage" />
 
     <EditText
         android:id="@+id/edSignPassword"

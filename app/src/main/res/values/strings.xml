@@ -19,6 +19,7 @@
 
     <!-- Sign Dialog -->
     <string name="email_hint">Email</string>
+    <string name="email_reset_password_was_sent">Reset email was sent!</string>
     <string name="password_hint">Password</string>
     <string name="sign_up">Регистрация</string>
     <string name="sign_in">Вход</string>
@@ -30,6 +31,8 @@
     <string name="send_verification_done">На вашу почту была отправлена ссылка для подтверждения вашего
         аккаунта, пожалуйста, подтвердите ваш аккаунт!</string>
     <string name="sign_in_error">Не удалось войти</string>
+    <string name="dialog_reset_email_message">Укажите email</string>
+
 
 
 </resources>
