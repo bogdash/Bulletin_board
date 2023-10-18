@@ -10,7 +10,7 @@ import com.bogdash.bulletinboard.databinding.SignDailogBinding
 
 class DialogHelper(act: MainActivity) {
     private val act = act
-    private val accHelper = AccountHelper(act)
+    val accHelper = AccountHelper(act)
     fun createSignDialog(index: Int) {
         val builder = AlertDialog.Builder(act)
         val rootDialogElement = SignDailogBinding.inflate(act.layoutInflater)
@@ -26,7 +26,9 @@ class DialogHelper(act: MainActivity) {
             setOnClickResetPassword(rootDialogElement, dialog)
         }
 
-
+        rootDialogElement.btGoogleSignIn.setOnClickListener {
+            accHelper.signInWithGoogle()
+        }
         dialog.show()
     }
 

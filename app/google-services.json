@@ -12,7 +12,20 @@
           "package_name": "com.bogdash.bulletinboard"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "206894030581-n1mamha8ckcoj7mos0squ8ro84qfajl5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.bogdash.bulletinboard",
+            "certificate_hash": "603a130e39f88fc48441771fd6cf58619a69730e"
+          }
+        },
+        {
+          "client_id": "206894030581-6km5c8bjkeo60v1sl19msnccm7hn3ll9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyDpX8oVFVgqcQo9B9BG8bi13Ixn6lIOZFQ"
@@ -20,7 +33,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206894030581-6km5c8bjkeo60v1sl19msnccm7hn3ll9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

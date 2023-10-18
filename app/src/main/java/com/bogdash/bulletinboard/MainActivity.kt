@@ -1,7 +1,9 @@
 package com.bogdash.bulletinboard
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.widget.TextView
@@ -11,6 +13,9 @@ import androidx.core.view.GravityCompat
 import com.bogdash.bulletinboard.databinding.ActivityMainBinding
 import com.bogdash.bulletinboard.dialoghelper.DialogConst
 import com.bogdash.bulletinboard.dialoghelper.DialogHelper
+import com.bogdash.bulletinboard.dialoghelper.GoogleAccConst
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.common.api.ApiException
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.navigation.NavigationView.OnNavigationItemSelectedListener
 import com.google.firebase.auth.FirebaseAuth
@@ -26,6 +31,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         init()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == GoogleAccConst.GOOGLE_SIGN_IN_REQUEST_CODE) {
+//            Log.d("MyLog", "Sign in result")
+            val task = GoogleSignIn.getSignedInAccountFromIntent(data)
+            try {
+                val account = task.getResult(ApiException::class.java)
+                if (account != null) {
+                    dialogHelper.accHelper.signInFirebaseWithGoogle(account.idToken!!)
+                }
+            } catch (e: ApiException) {
+                Log.d("MyLog", "Api error: ${e.message}")
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
     override fun onStart() {
