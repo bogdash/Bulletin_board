@@ -63,7 +63,7 @@ class DialogHelper(act: MainActivity) {
                 rootDialogElement.edSignPassword.text.toString()
             )
         } else {
-            accHelper.signIpWithEmail(
+            accHelper.signInWithEmail(
                 rootDialogElement.edSignEmail.text.toString(),
                 rootDialogElement.edSignPassword.text.toString()
             )

@@ -28,7 +28,7 @@ class AccountHelper(act: MainActivity) {
         }
     }
 
-    fun signIpWithEmail(email: String, password: String) {
+    fun signInWithEmail(email: String, password: String) {
         if (email.isNotEmpty() && password.isNotEmpty()) {
             act.myAuthentication
                 .signInWithEmailAndPassword(email, password)
@@ -45,7 +45,7 @@ class AccountHelper(act: MainActivity) {
     private fun getSignInClient(): GoogleSignInClient {
         val gso = GoogleSignInOptions
             .Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(act.getString(R.string.default_web_client_id)).build()
+            .requestIdToken(act.getString(R.string.default_web_client_id)).requestEmail().build()
         return GoogleSignIn.getClient(act, gso)
     }
 
@@ -60,6 +60,7 @@ class AccountHelper(act: MainActivity) {
         act.myAuthentication.signInWithCredential(credential).addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 Toast.makeText(act, "Sign In done!", Toast.LENGTH_LONG).show()
+                act.uiUpdate(task.result?.user)
             }
         }
     }
