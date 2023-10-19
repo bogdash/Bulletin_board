@@ -32,6 +32,8 @@
         аккаунта, пожалуйста, подтвердите ваш аккаунт!</string>
     <string name="sign_in_error">Не удалось войти</string>
     <string name="dialog_reset_email_message">Укажите email</string>
+    <string name="link_done">Email успешно подключен к google аккаунту</string>
+    <string name="enter_to_google">Аккаунт уже существует</string>
 
     <!--Google -->
     <string name="default_web_client_id" translatable="false">206894030581-6km5c8bjkeo60v1sl19msnccm7hn3ll9.apps.googleusercontent.com</string>
