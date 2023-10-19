@@ -117,6 +117,10 @@ class AccountHelper(act: MainActivity) {
         act.startActivityForResult(intent, GoogleAccConst.GOOGLE_SIGN_IN_REQUEST_CODE)
     }
 
+    fun signOutGoogle() {
+        getSignInClient().signOut()
+    }
+
     fun signInFirebaseWithGoogle(token: String) {
         val credential = GoogleAuthProvider.getCredential(token, null)
         act.myAuthentication.signInWithCredential(credential).addOnCompleteListener { task ->
