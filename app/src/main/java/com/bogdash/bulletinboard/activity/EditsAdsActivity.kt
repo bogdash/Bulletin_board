@@ -2,8 +2,6 @@ package com.bogdash.bulletinboard.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import com.bogdash.bulletinboard.R
 import com.bogdash.bulletinboard.databinding.ActivityEditsAdsBinding
 import com.bogdash.bulletinboard.dialogs.DialogSpinnerHelper
 import com.bogdash.bulletinboard.utils.CityHelper
