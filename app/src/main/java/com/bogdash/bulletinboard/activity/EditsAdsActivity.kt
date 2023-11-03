@@ -8,13 +8,15 @@ import com.bogdash.bulletinboard.utils.CityHelper
 
 class EditsAdsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditsAdsBinding
+    private val dialog = DialogSpinnerHelper()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityEditsAdsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+    }
 
+    private fun init() {
         val listCountry = CityHelper.getAllCountries(this)
-        val dialog = DialogSpinnerHelper()
         dialog.showSpinnerDialog(this, listCountry)
     }
 }
