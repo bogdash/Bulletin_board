@@ -39,8 +39,8 @@ object CityHelper {
             tempList.add("No result")
             return tempList
         }
-        for (selection: String in list) {
-            if (selection.toLowerCase(Locale.ROOT).startsWith(searchText.toLowerCase(Locale.ROOT)))
+        list.forEach { selection ->
+            if (selection.lowercase(Locale.ROOT).startsWith(searchText.lowercase(Locale.ROOT)))
                 tempList.add(selection)
         }
         if (tempList.size == 0) tempList.add("No result")
